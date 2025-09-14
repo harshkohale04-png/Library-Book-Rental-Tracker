@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Book_and_Student</fullName>
+    <active>true</active>
+    <description>Prevent saving Rental without Book or Student</description>
+    <errorConditionFormula>OR( 
+ISBLANK(Book__c ),ISBLANK( Student__c )
+)</errorConditionFormula>
+    <errorMessage>Both Book and Student are required before saving a Rental</errorMessage>
+</ValidationRule>
